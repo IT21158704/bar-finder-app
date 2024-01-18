@@ -66,3 +66,18 @@ export const updateProduct = async (req, res) => {
         res.status(500).json({ message: error.message });
     }
 }
+
+
+export const getProdutsInStores = async (req, res) => {
+    const id = req.params.id;
+
+    try {
+        // Fetch marks data with populated student details based on the subject ID
+        const productsData = await ProductModel.find({ storeId: id });
+
+        res.status(200).json({ productsData });
+    } catch (error) {
+        console.error('Error fetching products data:', error);
+        res.status(500).json({ message: 'Internal Server Error' });
+    }
+};

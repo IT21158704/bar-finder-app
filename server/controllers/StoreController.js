@@ -34,6 +34,20 @@ export const getMyStores = async (req, res) => {
     }
 };
 
+export const getStoreById = async (req, res) => {
+    const id = req.params.id;
+
+    try {
+        // Fetch marks data with populated student details based on the subject ID
+        const storeData = await StoreModel.findById(id);
+
+        res.status(200).json({ storeData });
+    } catch (error) {
+        console.error('Error fetching Stores data:', error);
+        res.status(500).json({ message: 'Internal Server Error' });
+    }
+};
+
 export const deleteStore = async (req, res) => {
     try {
         const id = req.params.id;
