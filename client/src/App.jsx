@@ -13,6 +13,7 @@ import Products from './pages/store/Products';
 import Guest from './pages/guest/Guest';
 import CustomerHome from './pages/customer/Home';
 import ProductsInStore from './pages/store/ProductsInStore';
+import CreateStore from './pages/store/CreateStore';
 
 export default function App() {
   return (
@@ -22,7 +23,7 @@ export default function App() {
         <Routes>
           <Route path='*' element={<NotFound />} />
           <Route path='/' element={<Dashboard />}>
-            <Route path='/guest' element={<Guest />} />
+            <Route path='/' element={<Guest />} />
             <Route path='/login' element={<Login />} />
             <Route path='/signup' element={<Signup />} />
           </Route>
@@ -33,7 +34,9 @@ export default function App() {
             <Route path='stores' element={<Stores />} />
             <Route path='products' element={<Products />} />
             <Route path='profile' element={<UserProfile />} />
+            <Route path='createStore' element={<CreateStore />} />
             <Route path='storeProducts/:storeId' element={<ProductsInStore />} />
+            
           </Route>
 
           <Route path='/customer' element={<Dashboard />}>

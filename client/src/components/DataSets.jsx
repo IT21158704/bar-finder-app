@@ -127,3 +127,64 @@ export const districts = [
       label: 'Monaragala',
     },
   ];
+
+  export const categories = [
+    {
+      value: 'Vodka',
+      label: 'Vodka',
+    },
+    {
+      value: 'Rum',
+      label: 'Rum',
+    },
+    {
+      value: 'Gin',
+      label: 'Gin',
+    },
+    {
+      value: 'Tequila',
+      label: 'Tequila',
+    },
+    {
+      value: 'Brandy',
+      label: 'Brandy',
+    },
+    {
+      value: 'Cognac',
+      label: 'Cognac',
+    },
+    {
+      value: 'Whisky',
+      label: 'Whisky',
+    },
+    {
+      value: 'Scotch',
+      label: 'Scotch',
+    },
+    {
+      value: 'Bourbon',
+      label: 'Bourbon',
+    },
+    {
+      value: 'Arrack',
+      label: 'Arrack',
+    },
+    // Add more categories as needed
+  ];
+
+  export const sizes = [
+    {
+      value: '200',
+      label: '200ml',
+    },
+    {
+      value: '375',
+      label: '375ml',
+    },
+    {
+      value: '750',
+      label: '750ml',
+    },
+    // Add more bottle sizes as needed
+  ];
+  

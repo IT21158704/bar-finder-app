@@ -1,3 +1,4 @@
+import ProductModel from "../models/ProductModel.js";
 import StoreModel from "../models/StoreModel.js";
 
 export const createStore = async (req, res) => {
@@ -56,12 +57,17 @@ export const deleteStore = async (req, res) => {
             throw Error("Id can't be empty");
         }
 
+        // Use async/await within the try block
         const deletedSub = await StoreModel.findByIdAndDelete(id);
-        res.status(200).json({ message: 'Store Deleted Successfully', subject:deletedSub });
+
+        // Use a separate async function inside the then block
+        await ProductModel.deleteMany({ storeId: id });
+
+        res.status(200).json({ message: 'Store Deleted Successfully', subject: deletedSub });
     } catch (error) {
         res.status(500).json({ message: error.message });
     }
-}
+};
 
 export const updateStore = async (req, res) => {
     try {

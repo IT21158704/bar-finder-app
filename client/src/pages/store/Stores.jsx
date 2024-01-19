@@ -61,7 +61,7 @@ export default function Stores() {
   });
 
 
-  const handleUpdateNotice = (row) => {
+  const handleUpdateStore = (row) => {
     setOpenEdit(true);
     setUpdateFormData({
       _id: row._id,
@@ -84,9 +84,6 @@ export default function Stores() {
 
   const handleClose = () => {
     setOpen(false);
-  };
-
-  const handleClickEdit = () => {
   };
 
   const handleCloseEdit = () => {
@@ -177,7 +174,7 @@ export default function Stores() {
                       <Tooltip title="edit">
                         <IconButton aria-label="edit"
                           onClick={() => {
-                            handleUpdateNotice(store);
+                            handleUpdateStore(store);
                           }}>
                           <Edit />
                         </IconButton>
@@ -347,8 +344,8 @@ export default function Stores() {
               </Grid>
             ))}
             <Grid item xs={12} sm={6} md={4} style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-              <Tooltip title="add store">
-                <Link component="button">
+              <Tooltip title="create store">
+                <Link component="button" onClick={() => navigate(`../CreateStore`)}>
                   <AddIcon style={{ width: 150, height: 150, color: '#444', borderWidth: '2px', borderRadius: 100, borderStyle: 'dashed' }} />
                 </Link>
               </Tooltip>

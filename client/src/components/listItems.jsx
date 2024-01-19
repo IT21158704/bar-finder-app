@@ -75,7 +75,7 @@ export const customerListItems = (
 
 export const guestListItems = (
   <React.Fragment>
-  <Link to={'guest'}>
+  <Link to={''}>
     <ListItemButton>
       <ListItemIcon>
         <Liquor />
